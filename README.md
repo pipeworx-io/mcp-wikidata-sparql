@@ -2,7 +2,7 @@
 
 Wikidata SPARQL MCP — Wikidata Query Service
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 965+ live data sources.
 
 ## Tools
 
@@ -10,7 +10,7 @@ Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents 
 |------|-------------|
 | `query` | Run a SPARQL query against the Wikidata Query Service. Returns JSON bindings by default. |
 | `instances_of` | Convenience: list all items that are an instance of a Wikidata class. |
-| `subclasses_of` | Convenience: subclass tree (P279 transitive) of a class. |
+| `subclasses_of` | Return all subclasses of a Wikidata class via transitive P279 (subclass-of) traversal; takes a Wikidata entity id (e.g. Q11424) and returns labelled subclass items up to the specified limit. |
 | `properties_of` | Convenience: all statements (property → value) about an entity. |
 | `entities_at` | Geo-spatial query: items near a point. Use instance_of to filter by class. |
 
@@ -28,7 +28,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 965+ data sources:
 
 ```json
 {

@@ -55,7 +55,7 @@ const tools: McpToolExport['tools'] = [
   },
   {
     name: 'subclasses_of',
-    description: 'Convenience: subclass tree (P279 transitive) of a class.',
+    description: 'Return all subclasses of a Wikidata class via transitive P279 (subclass-of) traversal; takes a Wikidata entity id (e.g. Q11424) and returns labelled subclass items up to the specified limit.',
     inputSchema: {
       type: 'object',
       properties: {
