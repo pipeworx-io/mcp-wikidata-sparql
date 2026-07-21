@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-wikidata-sparql",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Wikidata SPARQL MCP — Wikidata Query Service",
   "type": "module",
   "main": "src/index.ts",
