@@ -1,18 +1,24 @@
-# mcp-wikidata-sparql
+# @pipeworx/wikidata-sparql
 
-Wikidata SPARQL MCP — Wikidata Query Service
+Wikidata Query Service MCP — full SPARQL access to the entire Wikidata knowledge graph (~100M items, 1.5B statements). Complements the existing `wikidata` pack (which covers entity search + retrieval).
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1338+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `query` | Run a SPARQL query against the Wikidata Query Service. Returns JSON bindings by default. |
-| `instances_of` | Convenience: list all items that are an instance of a Wikidata class. |
-| `subclasses_of` | Return all subclasses of a Wikidata class via transitive P279 (subclass-of) traversal; takes a Wikidata entity id (e.g. Q11424) and returns labelled subclass items up to the specified limit. |
-| `properties_of` | Convenience: all statements (property → value) about an entity. |
-| `entities_at` | Geo-spatial query: items near a point. Use instance_of to filter by class. |
+- `query(sparql, format?)` — run a SPARQL query
+- `instances_of(entity_id, limit?)` — convenience: all instances of a class (e.g. Q5 = humans)
+- `subclasses_of(entity_id, limit?)` — convenience: subclass tree
+- `properties_of(entity_id, limit?)` — convenience: statements about an entity
+- `entities_at(latitude, longitude, radius_km?, instance_of?, limit?)` — geo-spatial query: items near a point
+
+## No auth
+
+The public WDQS at `https://query.wikidata.org/sparql` is keyless. Fair-use: ≤30 queries / min, ≤60 sec timeout per query. The pack sets a meaningful User-Agent (required by WMF policy).
+
+## Tips
+
+Wikidata is enormous — narrow your queries! Use `LIMIT`, `instance of` filters, and language tags. Bring schema knowledge from https://www.wikidata.org/wiki/Wikidata:List_of_properties.
 
 ## Quick Start
 
@@ -28,7 +34,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 1338+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -52,7 +58,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
