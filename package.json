@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-wikidata-sparql",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Wikidata SPARQL MCP — Wikidata Query Service",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "wikidata-sparql",
     "gatewaySlug": "wikidata-sparql",
-    "sourceHash": "v1-06bcd458312c9e3a69c93c72a48c751e8fbdd963c9511612e3ceff87d0597a56",
-    "sourceCommit": "98853f34516646cb7c4c1460f09249b262c0269e"
+    "sourceHash": "v1-d7828816970d01759591768505a8c99f642b054d048e2ad528fc75eb4dc198e6",
+    "sourceCommit": "78b905fa3a6880dfb85c79150f4bffe8cf50ef00"
   }
 }
